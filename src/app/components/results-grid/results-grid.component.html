@@ -1,0 +1,21 @@
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+  <mat-card *ngFor="let meal of meals$ | async" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title class="h-1/2">{{
+        meal.strMeal.substring(0, 20) + '...'
+      }}</mat-card-title>
+    </mat-card-header>
+    <img
+      class="h-1/2"
+      mat-card-image
+      [src]="meal.strMealThumb"
+      alt="Photo of {{ meal.strMeal }}"
+    />
+    <mat-card-content>
+      <p>{{ meal.strInstructions }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matButton (click)="openDialog(meal)">VIEW MORE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

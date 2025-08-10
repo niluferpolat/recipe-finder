@@ -1,0 +1,36 @@
+/* category-checkbox stilleri */
+.category-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  transition: all 0.2s ease;
+  background-color: #fffaf7;
+}
+
+.category-checkbox .mdc-checkbox {
+  display: none; /* kare kutuyu gizle */
+}
+
+.category-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.category-checkbox.mat-mdc-checkbox-checked {
+  border-color: #d97706; /* amber-600 */
+  background-color: #fff7ed;
+}
+
+.category-label {
+  font-size: 14px;
+  text-align: center;
+}
+.category-checkbox:hover {
+  border-color: #d97706; /* amber-600 */
+  background-color: #fff7ed;
+}

@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "moduleResolution": "bundler",
     "emitDecoratorMetadata": false,
     "target": "es2022",
     "module": "preserve",
     "lib": ["es2020", "dom"],
-    "paths": {},
+    "paths": {
+      "@recipe-finder/shared": ["shared/src/index.ts"]
+    },
     "isolatedModules": true
   },
   "angularCompilerOptions": {
