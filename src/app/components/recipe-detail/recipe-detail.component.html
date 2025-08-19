@@ -1,14 +1,22 @@
+<div>
 <h2 mat-dialog-title>{{ data?.strMeal }}</h2>
 
-<mat-spinner *ngIf="loading"></mat-spinner>
 
-<mat-dialog-content *ngIf="!loading" class="mat-typography">
+<mat-dialog-content #content *ngIf="!loading" class="mat-typography" style="overflow-y:auto; max-height:70vh;">
   <img
     [src]="data?.strMealThumb"
     [alt]="'Photo of ' + data?.strMeal"
     class="w-full h-auto mb-4"
   />
+ <h3 class="mt-4 font-bold">Ingredients</h3>
+  <ol>
+    <li *ngFor="let ing of ingredients; let i = index">
+      {{ measures[i] }} {{ ing }}
+    </li>
+  </ol>
 
+  <h3 class="mt-4 font-bold">Instructions</h3>
+  <p>{{ data?.strInstructions }}</p>
   <h3 class="mt-4 font-bold">Ingredients</h3>
   <ol>
     <li *ngFor="let ing of ingredients; let i = index">
@@ -19,15 +27,11 @@
   <h3 class="mt-4 font-bold">Instructions</h3>
   <p>{{ data?.strInstructions }}</p>
 
-  <h3 class="mt-4">Source</h3>
-  <p *ngIf="data?.strSource" class="text-blue-500">
-    <a [href]="data.strSource" target="_blank">{{ data.strSource }}</a>
-  </p>
-  <p *ngIf="data?.strYoutube" class="text-blue-500">
-    <a [href]="data.strYoutube" target="_blank">{{ data.strYoutube }}</a>
-  </p>
+  
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
 </mat-dialog-actions>
+
+</div>

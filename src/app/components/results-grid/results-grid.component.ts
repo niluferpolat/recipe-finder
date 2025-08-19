@@ -38,12 +38,14 @@ export class ResultsGridComponent implements OnChanges {
     }
   }
   openDialog(meal: Meal): void {
-    const dialogRef = this.dialog.open(RecipeDetailComponent, {
-      data: meal,
-    });
+    this.recipeService.lookupMealDetailById(meal.idMeal).subscribe((data) => {
+      const dialogRef = this.dialog.open(RecipeDetailComponent, {
+        data: data,
+      });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed', result);
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log('The dialog was closed', result);
+      });
     });
   }
 }

@@ -1,7 +1,5 @@
 <div class="container mx-auto p-4">
-  <h1 class="text-2xl font-bold mb-4 text-center">Recipe Finder</h1>
-
-  <mat-divider></mat-divider>
+  <h1 class="text-2xl font-bold mb-4 text-center"><img [src]="'/logo.png'" alt="Recipe Finder Logo" class="inline-block w-8 h-8 mr-2">Recipe Finder</h1>
   <mat-card appearance="outlined" class="mb-4 p-4">
     <h5 class="text-lg font-semibold mb-4 text-center">
       Welcome to Recipe Finder
@@ -36,4 +34,7 @@
     *ngIf="selectedCategory"
     [category]="selectedCategory"
   ></app-results-grid>
+  <p *ngIf="!selectedCategory" class="text-center text-gray-500 mt-4">
+    Please select a category to view recipes.
+  </p>
 </div>

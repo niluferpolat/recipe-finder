@@ -1,21 +1,26 @@
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-  <mat-card *ngFor="let meal of meals$ | async" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title class="h-1/2">{{
-        meal.strMeal.substring(0, 20) + '...'
-      }}</mat-card-title>
-    </mat-card-header>
+<div class="grid gap-4 md:grid-cols-3 items-stretch">
+  <mat-card
+    *ngFor="let meal of meals$ | async"
+    appearance="outlined"
+    class="flex flex-col h-full"
+  >
     <img
-      class="h-1/2"
       mat-card-image
+      class="h-40 w-full object-cover"
       [src]="meal.strMealThumb"
       alt="Photo of {{ meal.strMeal }}"
     />
-    <mat-card-content>
-      <p>{{ meal.strInstructions }}</p>
+
+    <mat-card-content class="flex-1">
+      <p class="text-sm text-gray-600 font-semibold text-center mt-4">
+        {{ meal.strMeal }}
+      </p>
     </mat-card-content>
-    <mat-card-actions>
-      <button matButton (click)="openDialog(meal)">VIEW MORE</button>
+
+    <mat-card-actions class="mt-auto">
+      <button class="font-bold" matButton (click)="openDialog(meal)">
+        View More
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

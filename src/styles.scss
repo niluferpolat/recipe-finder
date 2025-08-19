@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 @import 'theme/custom.theme.scss';
+.mat-dialog-content {
+  scroll-behavior: auto;
+}

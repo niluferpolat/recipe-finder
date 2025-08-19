@@ -5,7 +5,7 @@ import { RecipeService } from '../../services/recipe';
 import { Category } from '@recipe-finder/shared';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
-import { ResultsGridComponent } from 'src/app/components/results-grid/results-grid.component';
+import { ResultsGridComponent } from '../../components/results-grid/results-grid.component';  
 import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-home',
