@@ -54,6 +54,7 @@
     "eslint-plugin-cypress": "^3.5.0",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
+    "jest-html-reporter": "^4.3.0",
     "jest-preset-angular": "~15.0.0",
     "jest-util": "^30.0.2",
     "nx": "21.3.11",

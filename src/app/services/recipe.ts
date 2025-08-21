@@ -12,20 +12,16 @@ export class RecipeService {
 
   private readonly http = inject(HttpClient);
 
-  lookupMealDetailById(id: string): Observable<Meal | null> {
-    return this.http
-      .get<{ meals: Meal[] }>(`${this.baseUrl}/lookup.php?i=${id}`)
-      .pipe(map((response) => response.meals?.[0] || null));
-  }
-  listAllCategories() {
-    return this.http
-      .get<{ categories: Category[] }>(`${this.baseUrl}/categories.php`)
-      .pipe(map((response) => response.categories));
-  }
-
-  filterByCategories(category: string): Observable<Meal[]> {
-    return this.http
-      .get<{ meals: Meal[] }>(`${this.baseUrl}/filter.php?c=${category}`)
-      .pipe(map((response) => response.meals));
-  }
+  lookupMealDetailById(id: string) {
+  return this.http.get<{meals:any[]}>(`${this.baseUrl}/lookup.php`, { params: { i: id } })
+    .pipe(map(res => res.meals?.[0] ?? null));
+}
+listAllCategories() {
+  return this.http.get<{categories:any[]}>(`${this.baseUrl}/categories.php`)
+    .pipe(map(res => res.categories ?? []));
+}
+filterByCategories(c: string) {
+  return this.http.get<{meals:any[]}>(`${this.baseUrl}/filter.php`, { params: { c } })
+    .pipe(map(res => res.meals ?? []));
+}
 }
