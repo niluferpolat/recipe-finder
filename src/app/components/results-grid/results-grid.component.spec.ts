@@ -1,4 +1,4 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { ResultsGridComponent } from './results-grid.component';
 import { RecipeService } from '../../services/recipe';
@@ -9,9 +9,14 @@ describe('ResultsGridComponent', () => {
   let component: ResultsGridComponent;
 
   const recipeServiceMock = {
-    filterByCategories: jest.fn().mockReturnValue(of([{ idMeal: '1', strMeal: 'Mock Meal', strMealThumb: 'thumb.jpg' }])),
-   lookupMealDetailById: jest.fn().mockReturnValue(of({ idMeal: '1', strMeal: 'Mock Meal Detail' })),
-
+    filterByCategories: jest
+      .fn()
+      .mockReturnValue(
+        of([{ idMeal: '1', strMeal: 'Mock Meal', strMealThumb: 'thumb.jpg' }])
+      ),
+    lookupMealDetailById: jest
+      .fn()
+      .mockReturnValue(of({ idMeal: '1', strMeal: 'Mock Meal Detail' })),
   };
 
   const dialogMock = {
@@ -22,7 +27,7 @@ describe('ResultsGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResultsGridComponent], 
+      imports: [ResultsGridComponent],
       providers: [
         { provide: RecipeService, useValue: recipeServiceMock },
         { provide: MatDialog, useValue: dialogMock },
@@ -40,7 +45,9 @@ describe('ResultsGridComponent', () => {
   it('ngOnChanges çağrıldığında filterByCategories çağırmalı', () => {
     component.category = { strCategory: 'Dessert' } as any;
     component.ngOnChanges();
-    expect(recipeServiceMock.filterByCategories).toHaveBeenCalledWith('Dessert');
+    expect(recipeServiceMock.filterByCategories).toHaveBeenCalledWith(
+      'Dessert'
+    );
   });
 
   it('template yemek adını göstermeli', () => {
