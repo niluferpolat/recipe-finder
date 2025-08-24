@@ -1,5 +1,6 @@
-<div class="grid gap-4 md:grid-cols-3 items-stretch">
+<div class="grid gap-4 md:grid-cols-3 items-stretch" data-cy="results">
   <mat-card
+  data-cy="recipe-card"
     *ngFor="let meal of meals$ | async"
     appearance="outlined"
     class="flex flex-col h-full"
@@ -18,7 +19,7 @@
     </mat-card-content>
 
     <mat-card-actions class="mt-auto">
-      <button class="font-bold" matButton (click)="openDialog(meal)">
+      <button class="font-bold" matButton (click)="openDialog(meal)" data-cy="view-more">
         View More
       </button>
     </mat-card-actions>

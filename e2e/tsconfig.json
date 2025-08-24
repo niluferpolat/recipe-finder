@@ -1,23 +1,14 @@
 {
   "extends": "../tsconfig.base.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "outDir": "../dist/out-tsc",
-    "module": "commonjs",
-    "types": ["cypress", "node"],
-    "sourceMap": false,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+"compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    "types": ["cypress"],
+    "module": "ESNext",            
+    "moduleResolution": "Node",     
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.js",
-    "cypress.config.ts",
-    "**/*.cy.ts",
-    "**/*.cy.js",
-    "**/*.d.ts"
-  ]
+  "include": ["src/**/*.ts", "cypress.config.ts"]
 }

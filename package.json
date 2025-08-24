@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "format": "nx format:write",
+    "format": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "format:check": "nx format:check"
   },
   "private": true,

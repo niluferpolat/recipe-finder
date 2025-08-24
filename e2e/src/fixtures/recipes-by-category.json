@@ -1,0 +1,6 @@
+{
+  "meals": [
+    { "idMeal": "52772", "strMeal": "Beef and Mustard Pie", "strMealThumb": "thumb1.jpg" },
+    { "idMeal": "52874", "strMeal": "Beef Sunday Roast", "strMealThumb": "thumb2.jpg" }
+  ]
+}

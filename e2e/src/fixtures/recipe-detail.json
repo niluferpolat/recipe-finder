@@ -1,0 +1,12 @@
+{
+  "meals": [
+    {
+      "idMeal": "52772",
+      "strMeal": "Beef and Mustard Pie",
+      "strMealThumb": "thumb1.jpg",
+      "strInstructions": "Bake it...",
+      "strIngredient1": "Beef",
+      "strMeasure1": "500g"
+    }
+  ]
+}

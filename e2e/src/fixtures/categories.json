@@ -1,0 +1,6 @@
+{
+  "categories": [
+    { "idCategory": "1", "strCategory": "Beef", "strCategoryThumb": "beef.png" },
+    { "idCategory": "2", "strCategory": "Chicken", "strCategoryThumb": "chicken.png" }
+  ]
+}

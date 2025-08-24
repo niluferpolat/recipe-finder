@@ -1,5 +1,5 @@
 <div>
-<h2 mat-dialog-title>{{ data?.strMeal }}</h2>
+<h2 data-cy="dialog-title" mat-dialog-title>{{ data?.strMeal }}</h2>
 
 
 <mat-dialog-content #content *ngIf="!loading" class="mat-typography" style="overflow-y:auto; max-height:70vh;">
@@ -8,15 +8,15 @@
     [alt]="'Photo of ' + data?.strMeal"
     class="w-full h-auto mb-4"
   />
- <h3 class="mt-4 font-bold">Ingredients</h3>
-  <ol>
+ <h3 class="mt-4 font-bold" data-cy="dialog-ingredients-title">Ingredients</h3>
+  <ol  data-cy="dialog-ingredients">
     <li *ngFor="let ing of ingredients; let i = index">
       {{ measures[i] }} {{ ing }}
     </li>
   </ol>
 
-  <h3 class="mt-4 font-bold">Instructions</h3>
-  <p>{{ data?.strInstructions }}</p>
+  <h3 class="mt-4 font-bold" data-cy="dialog-instructions-title">Instructions</h3>
+  <p data-cy="dialog-instructions">{{ data?.strInstructions }}</p>
   <h3 class="mt-4 font-bold">Ingredients</h3>
   <ol>
     <li *ngFor="let ing of ingredients; let i = index">
@@ -30,8 +30,8 @@
   
 </mat-dialog-content>
 
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Close</button>
+<mat-dialog-actions align="end" >
+  <button mat-button mat-dialog-close data-cy="dialog-close">Close</button>
 </mat-dialog-actions>
 
 </div>
