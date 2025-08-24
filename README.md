@@ -1,6 +1,6 @@
 ## 🍲 Recipe Finder
 
-👉 **Live Demo:** [https://<senin-site-adin>.netlify.app](https://<senin-site-adin>.netlify.app)
+👉 **Live Demo:** [https://recipe-finder.netlify.app](https://kaleidoscopic-froyo-eedea5.netlify.app)
 
 A recipe browsing application built with Angular + Nx, styled with Tailwind + Angular Material, and tested using Cypress E2E.
 Users can explore categories, view meals, and see detailed instructions for each recipe.
